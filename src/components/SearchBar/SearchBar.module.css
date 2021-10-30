@@ -1,0 +1,25 @@
+.input-control {
+    min-width: 200px;
+}
+
+:global(.button).search-button {
+    background: #A3CD39;
+    border: none;
+}
+
+:global(.icon).search-icon {
+    color: white;
+}
+
+:global(.field:not(:last-child)).year-switch {
+    margin-bottom: 0;
+}
+
+.year {
+    display: flex;
+    align-items: center;
+}
+
+.year > * {
+    margin-right: 1rem;
+}
