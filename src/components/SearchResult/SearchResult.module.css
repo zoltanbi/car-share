@@ -1,0 +1,17 @@
+.search-result {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 450px;
+}
+
+.search-result > h2 {
+    margin-right: 3rem;
+}
+
+.car-image {
+    width: 210px;
+    height: 210px;
+    border-radius: 4px;
+    margin-right: 1rem;
+}

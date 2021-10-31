@@ -1,0 +1,9 @@
+.search-results {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.search-results > * {
+    margin: 1rem auto;
+}

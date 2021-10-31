@@ -2,6 +2,8 @@ import React from 'react';
 import { Navbar } from '../../components/Navbar/Navbar';
 import useReactRouter from 'use-react-router';
 import { SearchResultsSummary } from '../../components/SearchResultsSummary/SearchResultsSummary';
+import { SearchResults } from '../../components/SearchResults/SearchResults';
+import styles from './SearchPage.module.css'
 
 export const SearchPage = () => {
 
@@ -19,6 +21,8 @@ export const SearchPage = () => {
         <div>
             <Navbar make={makeParam} type={typeParam} year={yearParam}/>
             <SearchResultsSummary/>
+            <SearchResults/>
+            
         </div>
     );
 }
