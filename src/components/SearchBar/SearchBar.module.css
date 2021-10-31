@@ -23,3 +23,34 @@
 .year > * {
     margin-right: 1rem;
 }
+
+.field-container {
+    display: flex;
+}
+
+.field-1 {
+    display: flex;
+}
+
+.field-2 {
+    display: flex;
+}
+
+
+@media screen and (max-width: 800px) {
+    .field-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .year {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .year > * {
+        margin-top: 1rem;
+    }
+
+}
+

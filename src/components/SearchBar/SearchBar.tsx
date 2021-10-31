@@ -3,7 +3,7 @@ import { YearSlider } from '../YearSlider/YearSlider';
 import styles from './SearchBar.module.css'
 
 interface SearchBarProp {
-    small?: string,
+    small?: boolean,
     make?: string,
     type?: string,
     year?: string
@@ -42,41 +42,47 @@ export const SearchBar = (props: SearchBarProp) => {
 
     return (
         <form onSubmit={submit}>
-            <div className="field has-addons">
-                <span className="control">
-                    <div className={`button is-static ${sizeClass}`}>Car Make</div>
-                </span>
-                <span className="control">
-                    <input 
-                        className={`input ${sizeClass} ${styles[`input-control`]}`} 
-                        type="text" 
-                        value={make}
-                        onChange={(e) => setMake(e.target.value)}
-                        placeholder="Mercedes, Honda, Ford, ..."
-                    />
-                </span>
-                <span className="control">
-                <div className={`button is-static ${sizeClass}`}>TYPE</div>
-                </span>
-                <span className="control">
-                    <input 
-                        className={`input ${sizeClass} ${styles[`input-control`]}`} 
-                        type="text" 
-                        value={type}
-                        onChange={(e) => setType(e.target.value)}
-                        placeholder="Car, Truck, Trailer, ..."
-                    />
-                </span>
-                <button className={`button ${sizeClass} ${styles['search-button']}`} onClick={submit}>
-                    <span className={`icon is-small ${styles['search-icon']}`}><i className="fas fa-search"></i></span>
-                </button>
+            <div className={`field has-addons ${styles['field-container']}`}>
+                <div className={styles['field-1']}>
+                    <span className="control">
+                        <div className={`button is-static ${sizeClass}`}>Car Make</div>
+                    </span>
+                    <span className="control">
+                        <input 
+                            className={`input ${sizeClass} ${styles[`input-control`]}`} 
+                            type="text" 
+                            value={make}
+                            onChange={(e) => setMake(e.target.value)}
+                            placeholder="Mercedes, Honda, Ford, ..."
+                        />
+                    </span>
+                </div>
+                <div className={styles['field-2']}>
+                    <span className="control">
+                    <div className={`button is-static ${sizeClass}`}>TYPE</div>
+                    </span>
+                    <span className="control">
+                        <input 
+                            className={`input ${sizeClass} ${styles[`input-control`]}`} 
+                            type="text" 
+                            value={type}
+                            onChange={(e) => setType(e.target.value)}
+                            placeholder="Car, Truck, Trailer, ..."
+                        />
+                    </span>
+                    <button className={`button ${sizeClass} ${styles['search-button']}`} onClick={submit}>
+                        <span className={`icon is-small ${styles['search-icon']}`}><i className="fas fa-search"></i></span>
+                    </button>
+                </div>
             </div>
             <div className={styles.year}>
                 <div className={`field ${styles['year-switch']}`}>
                     <input id="switchRoundedDefault" type="checkbox" name="switchRoundedDefault" className="switch is-rounded" onChange={toggleYear} checked={anyYear}/>
                     <label htmlFor="switchRoundedDefault">Search any year</label>
                 </div>
-                {displayYearSlider}
+                <div>
+                    {displayYearSlider}
+                </div>
             </div>
         </form>
     )

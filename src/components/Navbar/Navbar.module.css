@@ -1,0 +1,36 @@
+.nav-bar {
+    display: flex;
+    padding: 1rem 0;
+    align-items: center;
+    justify-content: center;
+    box-shadow: -1px 0 20px -8px #b1b1b1;
+}
+
+:global(.title.is-1).logo {
+    margin-right: 3rem;
+    margin-left: 1rem;
+    font-size: 2rem;
+}
+
+
+@media screen and (max-width: 850px) {
+    
+    :global(.title.is-1).logo {
+        margin-right: 2rem;
+        font-size: 2rem;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .nav-bar {
+        flex-direction: column;
+    }
+    
+    :global(.title.is-1).logo {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+}

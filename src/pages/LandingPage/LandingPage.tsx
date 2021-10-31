@@ -12,7 +12,11 @@ export const LandingPage = () => {
         const urlEncodedType = encodeURI(type);
         const urlEncodedYear = encodeURI(year);
         if(year==='') {
-            history.push(`/search?make=${urlEncodedMake}&type=${urlEncodedType}`);
+            if (type==='') {
+                history.push(`/search?make=${urlEncodedMake}`);
+            } else {
+                history.push(`/search?make=${urlEncodedMake}&type=${urlEncodedType}`);
+            }
         } else {
             history.push(`/search?make=${urlEncodedMake}&type=${urlEncodedType}&year=${urlEncodedYear}`);
         }
