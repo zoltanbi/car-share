@@ -5,6 +5,7 @@ interface YearSliderProp {
     value: number;
     min: number;
     max: number;
+    setYear: any;
 }
 
 export const YearSlider = (props:YearSliderProp) => {
@@ -19,6 +20,10 @@ export const YearSlider = (props:YearSliderProp) => {
         setCssValue(percent); 
         document.documentElement.style.setProperty('--value', cssValue);
     }
+
+    useEffect(() => {
+        props.setYear(value)
+    })
 
     useEffect(() => {
         document.documentElement.style.setProperty('--value', cssValue);
