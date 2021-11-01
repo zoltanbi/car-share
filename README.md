@@ -17,5 +17,5 @@ You will also see any lint errors in the console.
 ### App interaction
 
 In this app you can search via car make, car type and car year.
-> You must have entered a car make in order to perform a search
-> Car type and car year parameters are optional but can be used to further filter your search.
+- You must have entered a car make in order to perform a search
+- Car type and car year parameters are optional but can be used to further filter your search.
