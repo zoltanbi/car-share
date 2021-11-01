@@ -36,8 +36,17 @@ export const SearchPage = () => {
 
     return (
         <div>
-            <Navbar make={makeParam} type={typeParam} year={yearParam} search={search}/>
-            <SearchResultsSummary/>
+            <Navbar 
+                make={makeParam} 
+                type={typeParam} 
+                year={yearParam} 
+                search={search}
+            />
+            <SearchResultsSummary 
+                make={searchParams.make} 
+                type={searchParams.type} 
+                amountResults={amountResults}
+            />
             <SearchResults cars ={cars}/>
             
         </div>

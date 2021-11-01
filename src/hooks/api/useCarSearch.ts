@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import queryString from 'query-string';
 
 export const useCarSearch = (make, type, year) => {
 
@@ -15,24 +14,24 @@ export const useCarSearch = (make, type, year) => {
             try {
                 console.log('searchParam', searchParams)
                 
-                if(searchParams.year===null && searchParams.type===null) {
+                if(searchParams.make && !searchParams.year && !searchParams.type) {
                     const rawData = await fetch(`${baseUrl}/vehicles/GetModelsForMake/${searchParams.make}?format=json`);
                     const resp = await rawData.json();
                     setCars(resp.Results);
                     setAmountResults(resp.Count);
-                } else if (searchParams.year===null && searchParams.type!==null) {
+                } else if (searchParams.make && !searchParams.year && searchParams.type) {
                     const rawData = await fetch(`${baseUrl}/vehicles/getmodelsformakeyear/make/
                             ${searchParams.make}/vehicleType/${searchParams.type}?format=json`);
                         const resp = await rawData.json();
                     setCars(resp.Results);
                     setAmountResults(resp.Count);
-                } else if (searchParams.year!==null && searchParams.type===null) {
+                } else if (searchParams.make && searchParams.year && !searchParams.type) {
                     const rawData = await fetch(`${baseUrl}/vehicles/getmodelsformakeyear/make/
                             ${searchParams.make}/modelYear/${searchParams.year}?format=json`);
                         const resp = await rawData.json();
                     setCars(resp.Results);
                     setAmountResults(resp.Count);
-                } else {
+                } else if (searchParams.make && searchParams.year && searchParams.type) {
                     const rawData = await fetch(`${baseUrl}/vehicles/getmodelsformakeyear/make/
                             ${searchParams.make}/modelYear/${searchParams.year}//vehicleType/${searchParams.type}?format=json`);
                     const resp = await rawData.json();
